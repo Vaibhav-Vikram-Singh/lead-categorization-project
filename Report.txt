@@ -1,0 +1,48 @@
+Project Report: Lead Categorization Tool
+
+Problem:
+
+Identifying the business category of companies based on their website content can improve lead prioritization for investment or outreach.
+
+Approach:
+
+Collected textual data from company homepages and common subpages using Requests and BeautifulSoup (with Selenium as fallback).
+Combined and cleaned all text into a single field per domain.
+Defined keyword sets for 4 categories: AI, SaaS, Fintech, and Developer Tools.
+Scored websites based on keyword frequency.
+Selected the most likely category using max scoring.
+
+Data Preprocessing:
+
+Removed scripts/styles
+Joined subpage texts
+Removed empty or failed scrape results
+
+Category Mapping:
+
+Category                      Keywords Used
+
+AI                            artificial intelligence, LLM, deep learning...
+
+SaaS                          SaaS, subscription, software as a service
+
+Fintech                       finance, payment, banking, transaction
+
+Developer_Tools               API, SDK, integration, infrastructure
+
+
+Model:
+
+No ML model used; keyword-based rule system.
+Easy to extend with TF-IDF, embeddings, or classification model later.
+
+Evaluation:
+
+Visual inspection of predicted categories.
+Categories aligned well with company functions.
+Visualization: bar chart of category distribution.
+
+Tools Used:
+
+Python, Jupyter
+BeautifulSoup, Selenium, pandas, matplotlib
